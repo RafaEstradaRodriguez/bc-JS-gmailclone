@@ -1,0 +1,24 @@
+<!--<table class="table" id="main-container" cellpadding="0" cellspacing="0">
+  <tbody> 
+      <tr (click)="read[i]=true" [style.background-color] = "read[i]  ? 'grey' : 'none'" *ngFor="let correo of correos; let i = index" class="mail-row">
+          <td><input type="checkbox"></td>
+          <td><div (click)="starDisabled[i]=!starDisabled[i]" [class.star-disabled]=starDisabled[i] [class.star-enabled]=!starDisabled[i]></div></td>
+          <td>{{ correo.from }}</td>
+          <td><span>{{ correo.subject}}</span> - <span>{{correo.content}}</span></td>
+          <td><span>{{ correo.subject}}</span> - <span>{{correo.content | slice:0:getMaxwidth(correo)}}</span></td>
+          <td>{{correo.date| date:'shortTime'}}</td>
+      </tr>
+  </tbody>
+</table>
+-->
+<table class="table" id="main-container" cellpadding="0" cellspacing="0">
+  <tbody>
+<tr (click)="read[i]=true" [style.background-color] = "read[i]  ? 'grey' : 'none'" *ngFor="let correo of correos; let i = index">
+  <td><input type="checkbox"></td>
+          <td><div (click)="starDisabled[i]=!starDisabled[i]" [class.star-disabled]=starDisabled[i] [class.star-enabled]=!starDisabled[i]></div></td>
+          <td>{{ correo.from }}</td>
+          <td><span>{{ correo.subject}}</span> - <span>{{correo.content | slice:0:maxLength(correo)}}</span></td>
+          <td>{{correo.date | date:'shortTime'}}</td>
+        </tr>
+</tbody>
+</table>

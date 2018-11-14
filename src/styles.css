@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+.star-disabled {
+    background-color: aqua;
+    width: 10px;
+    height: 10px;
+}
+
+.star-enabled {
+    width: 10px;
+    height: 10px;
+    background-color: brown;
+}
